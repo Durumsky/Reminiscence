@@ -54,6 +54,7 @@ class Game {
       { src: loadImage("/assets/player/stroke/player-stroke-1.png") },
       { src: loadImage("/assets/player/stroke/player-stroke-2.png") },
     ];
+
   }
 
   draw() {

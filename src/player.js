@@ -28,7 +28,7 @@ class Player {
       image(game.playerWalkForwad[this.imageIndex].src, this.x, this.y);
     } else if (keyIsDown(LEFT_ARROW)) {
       //player walks backwards
-      image(game.playerWalkBackward[this.imageIndex].src, this.x, this.y);
+      image(game.playerWalkBackward[this.imageIndex].src, this.x - game.playerWalkBackward[this.imageIndex].src.width, this.y);
     } else if (keyIsDown(DOWN_ARROW)) {
       //player strokes a worm
       this.y = 715;
