@@ -53,38 +53,73 @@ class Obstacle {
     //     console.log('possible contact')
     // }
 
-    if (!(game.player.y + game.playerWalkForward[0].src.height < this.y) && !(game.player.x > this.x + this.width) && game.player.x + game.playerWalkForward[game.player.imageIndex].src.width > this.x ){
-        console.log('contact!')
-    }
+    // if (!(game.player.y + game.playerWalkForward[0].src.height < this.y) && !(game.player.x > this.x + this.width) && game.player.x + game.playerWalkForward[game.player.imageIndex].src.width > this.x ){
+    //     console.log('contact!')
+    // }
 
-
-
+    //FORWARD
     if (
-      game.player.direction === "forward" &&
+      // (game.player.direction === 'forward') &&
       game.player.imageIndex >= 1 &&
       game.player.imageIndex <= 5
     ) {
       if (
-        !(
-          game.player.y +
-            game.playerWalkForward[game.player.imageIndex].src.height >
-          this.y
-        ) &&
-        !(game.player.x > this.x - game.worm.width) &&
-        game.player.x + game.playerWalkForward[game.player.imageIndex].src.width
+        !(game.player.y + game.playerJump[0].src.height < this.y) &&
+        !(game.player.x > this.x + this.width) &&
+        game.player.x +
+          game.playerWalkForward[game.player.imageIndex].src.width >
+          this.x
       ) {
-        console.log("CONTACT!!");
+        if (game.player.score > 0){
+          game.player.score -= 1;
+          this.x = 2000
+        }
+        this.x = 2000
+        console.log(game.player.score);
       }
-      //if (game.player.x + game.playerWalkForward){}
     }
 
-    // if (game.player.direction === 'forward') {
-    //     if (game.playerWalkForward[game.player.imageIndex].src.width){}
-    // }
     //BACKWARD
+    // works (more or less) with the code for forward
+    // when backwards only does contact up to the middle of the worm
+
+    // if (
+    //   game.player.direction === "backward" &&
+    //   game.player.imageIndex >= 0 &&
+    //   game.player.imageIndex <= 5
+    // ) {
+    //   if (
+    //     !(game.player.y + game.playerJump[0].src.height < this.y) &&
+    //     !(game.player.x > this.x + this.width) &&
+    //     game.player.x +
+    //       game.playerWalkBackward[game.player.imageIndex].src.width >
+    //       this.x
+    //   ) {
+    //     console.log("CONTACT backwards!!");
+    //   }
+    //}
+
     //JUMP
+    //(no need action: already works with forwards)
+
     //PULLED
+    //(no action needed)
+
     //START
+    if (game.player.direction === "start"){
+      if(!(game.player.x > this.x + this.width) &&
+          game.player.x +
+            game.playerWalkForward[0].src.width >
+            this.x
+        ) {
+          if (game.player.score > 0){
+            game.player.score -= 1;
+            this.x = 2000
+          }
+          this.x = 2000
+          console.log(game.player.score);
+        }
+    }
     //STROKE
   }
 }
