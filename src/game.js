@@ -55,6 +55,10 @@ class Game {
       { src: loadImage("/assets/player/stroke/player-stroke-2.png") },
     ];
 
+    this.worm = [
+      {src: loadImage('/assets/worms/worm.gif')}
+    ]
+
   }
 
   draw() {
