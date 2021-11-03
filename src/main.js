@@ -23,6 +23,10 @@ function draw() {
       game.player.stop();
     }
   }
+// console.log(game.player.x - game.player.width)
+//   if (dist(game.player.x + game.player.width, game.obstacle.contactPoint, game.obstacle.x, game.obstacle.contactPoint) < 0){
+//     game.obstacle.collision();
+//   }
 }
 
 function keyPressed() {

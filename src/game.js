@@ -2,11 +2,12 @@ class Game {
   setup() {
     this.player = new Player();
     this.background = new Background();
-    this.obstacle = [];
+    this.obstacle = new Obstacle;
   }
 
   constructor() {
     this.backgroundImages;
+    this.wormImage;
   }
 
   preload() {
@@ -27,13 +28,13 @@ class Game {
         speed: 2.5,
       },
     ];
-    this.playerWalkForwad = [
+    this.playerWalkForward = [
       { src: loadImage("/assets/player/standing/player-standing.png") },
-      { src: loadImage("/assets/player/walking forwads/player-walking-1.png") },
-      { src: loadImage("/assets/player/walking forwads/player-walking-2.png") },
-      { src: loadImage("/assets/player/walking forwads/player-walking-3.png") },
-      { src: loadImage("/assets/player/walking forwads/player-walking-4.png") },
-      { src: loadImage("/assets/player/walking forwads/player-walking-5.png") },
+      { src: loadImage("/assets/player/walking forwards/player-walking-1.png") },
+      { src: loadImage("/assets/player/walking forwards/player-walking-2.png") },
+      { src: loadImage("/assets/player/walking forwards/player-walking-3.png") },
+      { src: loadImage("/assets/player/walking forwards/player-walking-4.png") },
+      { src: loadImage("/assets/player/walking forwards/player-walking-5.png") },
     ];
     this.playerWalkBackward = [
       { src: loadImage("/assets/player/walking backwards/player-back-1.png") },
@@ -55,9 +56,8 @@ class Game {
       { src: loadImage("/assets/player/stroke/player-stroke-2.png") },
     ];
 
-    this.worm = [
-      {src: loadImage('/assets/worms/worm.gif')}
-    ]
+    this.worm = loadImage('/assets/worms/worm.gif')
+     
 
   }
 
@@ -65,6 +65,13 @@ class Game {
     clear();
     this.background.draw();
 
+    this.obstacle.draw();
+
     this.player.draw();
+
+    
+
+    
+    
   }
 }

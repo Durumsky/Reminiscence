@@ -8,6 +8,9 @@ class Player {
     this.floorLevel = 670;
     this.start = 50;
     this.backgroundMovement;
+    this.score = 0;
+    this.direction = "";
+    //this.width = image(game.playerWalkForward[this.imageIndex].src.width)
   }
 
   draw() {
@@ -19,26 +22,42 @@ class Player {
     if (this.y >= this.floorLevel) {
       this.y = this.floorLevel;
     }
+    
 
     //player jumps
     if (this.y < this.floorLevel) {
       image(game.playerJump[0].src, this.x, this.y);
+      if (this.direction === "jump" && keyIsDown(RIGHT_ARROW)) {
+        this.x += 7;
+      } else if (this.direction === "jump" && keyIsDown(LEFT_ARROW)) {
+        this.x -= 7;
+      }
     } else if (keyIsDown(RIGHT_ARROW)) {
       //player walks forward
-      image(game.playerWalkForwad[this.imageIndex].src, this.x, this.y);
+      image(game.playerWalkForward[this.imageIndex].src, this.x, this.y);
+      this.direction = "forward";
     } else if (keyIsDown(LEFT_ARROW)) {
       //player walks backwards
-      image(game.playerWalkBackward[this.imageIndex].src, this.x - game.playerWalkBackward[this.imageIndex].src.width, this.y);
+      image(
+        game.playerWalkBackward[this.imageIndex].src,
+        this.x - game.playerWalkBackward[this.imageIndex].src.width,
+        this.y
+      );
+      this.direction = "backward";
     } else if (keyIsDown(DOWN_ARROW)) {
       //player strokes a worm
+      this.imageIndex = 0;
       this.y = 715;
       image(game.playerStroke[this.imageIndex].src, this.x, this.y);
+      this.direction = "stroke";
     } else if (this.x > 50 || game.backgroundImages[0].x < 0) {
       //player pulled back
       this.y = 825;
       image(game.playerPulledBack[0].src, this.x, this.y);
+      this.direction = "pulled";
     } else {
-      image(game.playerWalkForwad[0].src, this.x, this.y);
+      image(game.playerWalkForward[0].src, this.x, this.y);
+      this.direction = "start";
     }
   }
 
@@ -49,15 +68,15 @@ class Player {
 
     this.imageIndex++;
     if (this.imageIndex > 5) this.imageIndex = 1;
+    
   }
 
   moveLeft() {
-    console.log('this works moveleft')
-    if (this.x > 50){
+    if (this.x > 50) {
       this.x -= 20;
     }
     this.imageIndex++;
-    if (this.imageIndex > 4) this.imageIndex = 0
+    if (this.imageIndex > 4) this.imageIndex = 0;
   }
 
   stop() {
@@ -67,16 +86,16 @@ class Player {
     }
   }
 
-  stroke(){
+  stroke() {
+    //this.imageIndex = 0;
     this.imageIndex++;
-    if (this.imageIndex > 1) this.imageIndex = 0
+    if (this.imageIndex > 1) this.imageIndex = 0;
   }
 
   jump() {
+    this.direction = "jump";
     if (this.y === this.floorLevel) {
-      this.velocity = -15;
+      this.velocity = -30;
     }
   }
-
-
 }
