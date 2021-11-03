@@ -1,11 +1,11 @@
 class Obstacle {
   constructor() {
-    this.x = 1200;
+    this.x = 2000;
     this.y = HEIGHT - 95.5;
     this.obstacles = [];
     (this.speed = 2), 5;
     this.height = 95.5;
-    this.width = 600 / 2;
+    this.width = 300;
     //contact point in the y
     this.contactPoint = this.y - this.height / 2;
   }
@@ -28,21 +28,56 @@ class Obstacle {
 
     //restarting the position of the worm
     if (this.x <= -this.width) {
-      this.x = 1800;
+      this.x = 2000;
     }
 
     //conditions of collision detection
-    
 
     //FORWARD
-    
-    if (game.player.direction === 'forward' && game.player.imageIndex >= 1 && game.player.imageIndex <= 5){
-        if ((game.player.x + game.playerWalkForward[game.player.imageIndex].src.width > this.x || game.player.x > this.x)){
 
-        }
-        //if (game.player.x + game.playerWalkForward){}
+    // console.log('player' + game.player.y + game.playerWalkForward[game.player.imageIndex].src.height)
+    // console.log('worm' + this.y)
+
+    //OVER THE WORM
+    // if (game.player.y + game.playerWalkForward[0].src.height < this.y){
+    //     console.log('over the worm')
+    // }
+
+    //AFTER the worm
+    //     if ((game.player.x > this.x + this.width)){
+    // console.log('after the worm')
+    //     }
+
+    //CROSSED THE START POINT OF THE WORM
+    // if (game.player.x + game.playerWalkForward[game.player.imageIndex].src.width > this.x){
+    //     console.log('possible contact')
+    // }
+
+    if (!(game.player.y + game.playerWalkForward[0].src.height < this.y) && !(game.player.x > this.x + this.width) && game.player.x + game.playerWalkForward[game.player.imageIndex].src.width > this.x ){
+        console.log('contact!')
     }
-    
+
+
+
+    if (
+      game.player.direction === "forward" &&
+      game.player.imageIndex >= 1 &&
+      game.player.imageIndex <= 5
+    ) {
+      if (
+        !(
+          game.player.y +
+            game.playerWalkForward[game.player.imageIndex].src.height >
+          this.y
+        ) &&
+        !(game.player.x > this.x - game.worm.width) &&
+        game.player.x + game.playerWalkForward[game.player.imageIndex].src.width
+      ) {
+        console.log("CONTACT!!");
+      }
+      //if (game.player.x + game.playerWalkForward){}
+    }
+
     // if (game.player.direction === 'forward') {
     //     if (game.playerWalkForward[game.player.imageIndex].src.width){}
     // }
