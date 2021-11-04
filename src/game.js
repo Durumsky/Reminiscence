@@ -3,6 +3,7 @@ class Game {
     this.player = new Player();
     this.background = new Background();
     this.obstacle = new Obstacle;
+    this.collectable = new Collectable;
   }
 
   constructor() {
@@ -57,6 +58,13 @@ class Game {
     ];
 
     this.worm = loadImage('/assets/worms/worm.gif')
+
+    this.collectableImages = [
+      { src: loadImage("/assets/collectables/collectable-1.png"), x: 1350, y: 550},
+      { src: loadImage("/assets/collectables/collectable-2.png"), x: 450, y: 670},
+      { src: loadImage("/assets/collectables/collectable-3.png"), x: 700, y: 670},
+
+    ];
      
 
   }
@@ -64,6 +72,8 @@ class Game {
   draw() {
     clear();
     this.background.draw();
+
+    this.collectable.draw();
 
     this.obstacle.draw();
 

@@ -59,7 +59,7 @@ class Obstacle {
 
     //FORWARD
     if (
-      // (game.player.direction === 'forward') &&
+      (game.player.direction === 'forward' || game.player.direction === 'backward') &&
       game.player.imageIndex >= 1 &&
       game.player.imageIndex <= 5
     ) {
@@ -121,5 +121,12 @@ class Obstacle {
         }
     }
     //STROKE
+    if (game.player.direction === 'stroke'){
+      if (game.player.x + game.playerStroke[0].src.width / 2 === this.x ){
+        game.player.score += 1;
+        console.log(game.player.score);
+        //draw next level: inside house
+      }
+    }
   }
 }
