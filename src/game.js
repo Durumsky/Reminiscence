@@ -12,6 +12,7 @@ class Game {
   }
 
   preload() {
+    
     this.backgroundImages = [
       {
         src: loadImage("/assets/background/background-1A.png"),
@@ -23,7 +24,7 @@ class Game {
         src: loadImage("/assets/background/background-score1.png"),
         x: 0,
         speed: 1.5,
-        score: 1,
+        score: 1
       },
       {
         src: loadImage("/assets/background/background-1B.png"),
@@ -42,7 +43,7 @@ class Game {
         src: loadImage("/assets/background/background-score2.png"),
         x: 0,
         speed: 2.5,
-        score: 2,
+        score: 2
       },
       {
         src: loadImage("/assets/background/background-score3.png"),
@@ -50,11 +51,12 @@ class Game {
         speed: 2.5,
         score: 3
       },
-      // {
-      //   src: loadImage("/assets/background/background-score4.png"),
-      //   x: 0,
-      //   speed: 2.5,
-      // },
+      {
+        src: loadImage("/assets/background/background-score4.png"),
+        x: 0,
+        speed: 2.5,
+        score: 4
+      },
       
     ];
     this.playerWalkForward = [

@@ -107,6 +107,5 @@ class Collectable {
         this.collectableIndex = 0;
       }
     }
-    console.log(game.player.score)
   }
 }
