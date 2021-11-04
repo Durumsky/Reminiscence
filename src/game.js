@@ -60,9 +60,9 @@ class Game {
     this.worm = loadImage('/assets/worms/worm.gif')
 
     this.collectableImages = [
-      { src: loadImage("/assets/collectables/collectable-1.png"), x: 1350, y: 550},
-      { src: loadImage("/assets/collectables/collectable-2.png"), x: 450, y: 670},
-      { src: loadImage("/assets/collectables/collectable-3.png"), x: 700, y: 670},
+      { src: loadImage("/assets/collectables/collectable-1.png"), x: 1350, y: 450},
+      { src: loadImage("/assets/collectables/collectable-2.png"), x: 450, y: 1030},
+      { src: loadImage("/assets/collectables/collectable-3.png"), x: 700, y: 850},
 
     ];
      
