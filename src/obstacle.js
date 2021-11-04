@@ -121,10 +121,10 @@ class Obstacle {
         }
     }
     //STROKE
-    if (game.player.direction === 'stroke'){
-      if (game.player.x + game.playerStroke[0].src.width / 2 === this.x ){
+    if (game.player.direction === 'stroke' && game.player.score === 3){
+      if (game.player.x + 200 === this.x ){
         game.player.score += 1;
-        console.log(game.player.score);
+        console.log('touching');
         //draw next level: inside house
       }
     }
