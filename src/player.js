@@ -28,9 +28,9 @@ class Player {
     if (this.y < this.floorLevel) {
       image(game.playerJump[0].src, this.x, this.y);
       if (this.direction === "jump" && keyIsDown(RIGHT_ARROW)) {
-        this.x += 7;
+        this.x += 10;
       } else if (this.direction === "jump" && keyIsDown(LEFT_ARROW)) {
-        this.x -= 7;
+        this.x -= 10;
       }
     } else if (keyIsDown(RIGHT_ARROW)) {
       //player walks forward
@@ -73,7 +73,7 @@ class Player {
 
   moveLeft() {
     if (this.x > 50) {
-      this.x -= 20;
+      this.x -= 10;
     }
     this.imageIndex++;
     if (this.imageIndex > 4) this.imageIndex = 0;
@@ -82,7 +82,7 @@ class Player {
   stop() {
     this.imageIndex = 0;
     if (this.x >= 50 && this.y === 825) {
-      this.x -= 50;
+      this.x -= 10;
     }
   }
 
