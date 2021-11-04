@@ -87,7 +87,7 @@ class Game {
       { src: loadImage("assets/player/stroke/player-stroke-2.png") },
     ];
 
-    this.worm = loadImage('ssets/worms/worm.gif')
+    this.worm = loadImage('assets/worms/worm.gif')
 
     this.collectableImages = [
       { src: loadImage("assets/collectables/collectable-1.png"), x: 1350, y: 450},
