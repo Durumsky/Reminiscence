@@ -61,21 +61,21 @@ class Game {
     ];
     this.playerWalkForward = [
       { src: loadImage("assets/player/standing/player-standing.png") },
-      { src: loadImage("assets/player/walking forwards/player-walking-1.png") },
-      { src: loadImage("assets/player/walking forwards/player-walking-2.png") },
-      { src: loadImage("assets/player/walking forwards/player-walking-3.png") },
-      { src: loadImage("assets/player/walking forwards/player-walking-4.png") },
-      { src: loadImage("assets/player/walking forwards/player-walking-5.png") },
+      { src: loadImage("assets/player/walkingforwards/player-walking-1.png") },
+      { src: loadImage("assets/player/walkingforwards/player-walking-2.png") },
+      { src: loadImage("assets/player/walkingforwards/player-walking-3.png") },
+      { src: loadImage("assets/player/walkingforwards/player-walking-4.png") },
+      { src: loadImage("assets/player/walkingforwards/player-walking-5.png") },
     ];
     this.playerWalkBackward = [
-      { src: loadImage("assets/player/walking backwards/player-back-1.png") },
-      { src: loadImage("assets/player/walking backwards/player-back-2.png") },
-      { src: loadImage("assets/player/walking backwards/player-back-3.png") },
-      { src: loadImage("assets/player/walking backwards/player-back-4.png") },
-      { src: loadImage("assets/player/walking backwards/player-back-5.png") },
+      { src: loadImage("assets/player/walkingbackwards/player-back-1.png") },
+      { src: loadImage("assets/player/walkingbackwards/player-back-2.png") },
+      { src: loadImage("assets/player/walkingbackwards/player-back-3.png") },
+      { src: loadImage("assets/player/walkingbackwards/player-back-4.png") },
+      { src: loadImage("assets/player/walkingbackwards/player-back-5.png") },
     ];
     this.playerPulledBack = [
-      { src: loadImage("assets/player/pulled back/player-pulled-back.png") },
+      { src: loadImage("assets/player/pulledback/player-pulled-back.png") },
     ];
 
     this.playerJump = [
