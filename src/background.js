@@ -2,13 +2,11 @@ class Background {
   constructor() {}
 
   draw() {
-    game.backgroundImages.forEach(function (img) {
-      //SCORE 0:
-
+    for (let img of game.backgroundImages) {
       //move back ground after player surpasses the 300 point
-      if (img.score <= game.player.score){
+      if (img.score <= game.player.score) {
         if (keyIsDown(RIGHT_ARROW) && game.player.x > 300) {
-          img.x -= img.speed;
+          img.x -= img.speed; 
           image(img.src, img.x, 0, WIDTH * 2, height);
           image(img.src, img.x + WIDTH * 2, 0, WIDTH * 2, height);
         } else {
@@ -26,15 +24,17 @@ class Background {
         if (img.x <= -(WIDTH * 2)) {
           img.x = 0;
         }
+        this.update(img.x);
+        console.log( game.player.x ,img.x )
       }
 
       //SCORE 1:
 
       //move back ground after player surpasses the 300 point
-      if (img.score <= game.player.score)  {
+      if (img.score <= game.player.score) {
         if (keyIsDown(RIGHT_ARROW) && game.player.x > 300) {
           img.x -= img.speed;
-          image(img.src, game.backgroundImages[2].src.x, 0, WIDTH * 2, height);
+          image(img.src, img.x, 0, WIDTH * 2, height);
           image(img.src, img.x + WIDTH * 2, 0, WIDTH * 2, height);
         } else {
           image(img.src, img.x, 0, WIDTH * 2, height);
@@ -101,6 +101,12 @@ class Background {
       //     img.x = 0;
       //   }
       // }
-    });
+    }
+  }
+
+  update(value) {
+    for (let img of game.backgroundImages) {
+      img.x = value;
+    }
   }
 }
