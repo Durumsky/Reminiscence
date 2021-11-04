@@ -17,17 +17,45 @@ class Game {
         src: loadImage("/assets/background/background-1A.png"),
         x: 0,
         speed: 0.5,
+        score: 0,
+      },
+      {
+        src: loadImage("/assets/background/background-score1.png"),
+        x: 0,
+        speed: 1.5,
+        score: 1,
       },
       {
         src: loadImage("/assets/background/background-1B.png"),
         x: 0,
         speed: 1.5,
+        score: 0,
       },
       {
         src: loadImage("/assets/background/background-1C.png"),
         x: 0,
         speed: 2.5,
+        score: 0,
       },
+      
+      {
+        src: loadImage("/assets/background/background-score2.png"),
+        x: 0,
+        speed: 2.5,
+        score: 2,
+      },
+      {
+        src: loadImage("/assets/background/background-score3.png"),
+        x: 0,
+        speed: 2.5,
+        score: 3
+      },
+      // {
+      //   src: loadImage("/assets/background/background-score4.png"),
+      //   x: 0,
+      //   speed: 2.5,
+      // },
+      
     ];
     this.playerWalkForward = [
       { src: loadImage("/assets/player/standing/player-standing.png") },

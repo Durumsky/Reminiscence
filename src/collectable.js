@@ -36,7 +36,7 @@ class Collectable {
         this.y
       );
 
-      if (dist1 < 50) {
+      if (dist1 < 100) {
         this.collectableIndex = 1;
         if (game.player.score < 1) {
           game.player.score += 1;
@@ -66,7 +66,7 @@ class Collectable {
         game.collectableImages[1].y + game.collectableImages[1].src.height
       );
 
-      if (dist2 < 50) {
+      if (dist2 < 80) {
         this.collectableIndex = 2;
         if (game.player.score < 2) {
           game.player.score += 1;
@@ -98,7 +98,7 @@ class Collectable {
         game.collectableImages[2].y + game.collectableImages[2].src.height
       );
 
-      if (dist3 < 50) {
+      if (dist3 < 80) {
         this.collectableIndex = 0;
         if (game.player.score < 3) {
           game.player.score += 1;
