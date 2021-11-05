@@ -19,6 +19,8 @@ class Game {
 
 
   preload() {
+
+    this.lastBackground = loadImage("assets/background/last-background.png")
     
     this.backgroundImages = [
       {
@@ -66,9 +68,9 @@ class Game {
       },
       
     ];
-    this.lastBackground = loadImage("assets/background/last-background.png")
-    this.glance = loadImage("assets/background/glance.png")
     
+    this.glance = loadImage("assets/background/glance.png")
+
     this.playerWalkForward = [
       { src: loadImage("assets/player/standing/player-standing.png") },
       { src: loadImage("assets/player/walking-forwards/player-walking-1.png") },
