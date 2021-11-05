@@ -9,6 +9,7 @@ class Game {
     this.wormPurringAudio = new Audio("/assets/sounds/cat-purring.mp3")
     this.playerPulled = new Audio ("assets/sounds/pulled.wav")
     this.painAudio = new Audio ("assets/sounds/pain.wav")
+    
 
 
   }
