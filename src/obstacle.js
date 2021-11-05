@@ -81,6 +81,7 @@ class Obstacle {
           }
           this.x = 2000;
           console.log(game.player.score);
+          game.painAudio.play()
         }
       }
 
@@ -102,6 +103,7 @@ class Obstacle {
           }
           this.x = 2000;
           console.log(game.player.score);
+          game.painAudio.play()
         }
       }
     }
