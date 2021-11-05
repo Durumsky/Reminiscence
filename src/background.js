@@ -2,6 +2,7 @@ class Background {
   constructor() {}
 
   draw() {
+    
     for (let img of game.backgroundImages) {
       //move back ground after player surpasses the 300 point
       if (img.score <= game.player.score) {
@@ -25,7 +26,7 @@ class Background {
           img.x = 0;
         }
         this.update(img.x);
-        console.log( game.player.x ,img.x )
+       
       }
 
       //SCORE 1:

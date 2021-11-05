@@ -50,7 +50,7 @@ class Player {
       this.y = 715;
       image(game.playerStroke[this.imageIndex].src, this.x, this.y);
       this.direction = "stroke";
-    } else if (this.x > 50 || game.backgroundImages[0].x < 0) {
+    } else if ((this.x > 50 || game.backgroundImages[0].x < 0) && game.player.score <= 3) {
       //player pulled back
       this.y = 825;
       image(game.playerPulledBack[0].src, this.x, this.y);
@@ -68,6 +68,8 @@ class Player {
 
     this.imageIndex++;
     if (this.imageIndex > 5) this.imageIndex = 1;
+
+    game.stepsAudio.play()
     
   }
 
@@ -77,18 +79,21 @@ class Player {
     }
     this.imageIndex++;
     if (this.imageIndex > 4) this.imageIndex = 0;
+    game.stepsAudio.play()
   }
 
   stop() {
     this.imageIndex = 0;
-    if (this.x >= 50 && this.y === 825) {
+    if (this.x >= 50 && this.y === 825 && game.player.score < 4) {
       this.x -= 10;
     }
+    game.stepsAudio.pause();
   }
 
   stroke() {
     //this.imageIndex = 0;
     this.imageIndex++;
+    game.stepsAudio.pause();
     if (this.imageIndex > 1) this.imageIndex = 0;
   }
 

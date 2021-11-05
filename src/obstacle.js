@@ -9,6 +9,7 @@ class Obstacle {
     //contact point in the y
     this.contactPoint = this.y - this.height / 2;
     this.endOfWorm = false;
+    this.lastX = 0;
   }
 
   collision() {
@@ -109,11 +110,18 @@ class Obstacle {
         if (game.player.x + 200 === this.x) {
           game.player.score += 1;
           this.endOfWorm = true;
-          console.log("touching");
+          game.wormPurringAudio.play()
+          this.speed = 0;
+          this.lastX = this.x
 
           //draw next level: inside house
         }
       }
+
+      //Keep the worm in the same x as the last background
+      // if (game.player.score === 4){
+      //   this.x = game.backgroundImages[3].x + this.lastX
+      // }
     
   }
 }

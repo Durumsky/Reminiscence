@@ -4,12 +4,19 @@ class Game {
     this.background = new Background();
     this.obstacle = new Obstacle;
     this.collectable = new Collectable;
+    this.stepsAudio = new Audio("assets/sounds/Walking-on-Gravel.mp3");
+    this.collectAudio = new Audio("assets/sounds/collect.wav");
+    this.wormPurringAudio = new Audio("/assets/sounds/cat-purring.mp3")
+    this.playerPulled = new Audio ("assets/sounds/pulled.wav")
+
+
   }
 
   constructor() {
     this.backgroundImages;
     this.wormImage;
   }
+
 
   preload() {
     
@@ -59,6 +66,9 @@ class Game {
       },
       
     ];
+    this.lastBackground = loadImage("assets/background/last-background.png")
+    this.glance = loadImage("assets/background/glance.png")
+    
     this.playerWalkForward = [
       { src: loadImage("assets/player/standing/player-standing.png") },
       { src: loadImage("assets/player/walking-forwards/player-walking-1.png") },

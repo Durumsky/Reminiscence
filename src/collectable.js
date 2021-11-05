@@ -40,6 +40,7 @@ class Collectable {
         this.collectableIndex = 1;
         if (game.player.score < 1) {
           game.player.score += 1;
+          game.collectAudio.play();
         }
       } else {
         this.collectableIndex = 0;
@@ -70,12 +71,12 @@ class Collectable {
         this.collectableIndex = 2;
         if (game.player.score < 2) {
           game.player.score += 1;
+          game.collectAudio.play();
         }
       } else {
         this.collectableIndex = 0;
       }
-      console.log(game.player.score);
-      console.log(game.player.score);
+      
     }
 
     // //when to show third items
@@ -102,6 +103,7 @@ class Collectable {
         this.collectableIndex = 0;
         if (game.player.score < 3) {
           game.player.score += 1;
+          game.collectAudio.play();
         }
       } else {
         this.collectableIndex = 0;
