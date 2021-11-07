@@ -6,7 +6,7 @@ class Game {
     this.collectable = new Collectable;
     this.stepsAudio = new Audio("assets/sounds/Walking-on-Gravel.mp3");
     this.collectAudio = new Audio("assets/sounds/collect.wav");
-    this.wormPurringAudio = new Audio("/assets/sounds/cat-purring.mp3")
+    this.wormPurringAudio = new Audio("assets/sounds/cat-purring.mp3")
     this.playerPulled = new Audio ("assets/sounds/pulled.wav")
     this.painAudio = new Audio ("assets/sounds/pain.wav")
     
